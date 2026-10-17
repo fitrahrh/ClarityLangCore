@@ -62,8 +62,8 @@ public class ClarityLangCore extends JavaPlugin {
         pm.registerEvents(new PlayerLocaleChangeListener(configManager, languageManager, playerLanguageManager), this);
 
         getLogger().info("=================================================");
-        getLogger().info(" ClarityLangCore v" + getPluginMeta().getVersion() + " has been successfully enabled!");
-        getLogger().info(" Registered Languages: " + languageManager.getRegisteredLanguages().size());
+        getLogger().info(() -> " ClarityLangCore v" + getPluginMeta().getVersion() + " has been successfully enabled!");
+        getLogger().info(() -> " Registered Languages: " + languageManager.getRegisteredLanguages().size());
         getLogger().info(" Native Dialog API: Paper 26.3 Ready");
         getLogger().info("=================================================");
     }
@@ -73,7 +73,7 @@ public class ClarityLangCore extends JavaPlugin {
         if (playerLanguageManager != null) {
             playerLanguageManager.saveDataSync();
         }
-        getLogger().info(getName() + " has been cleanly disabled!");
+        getLogger().info(() -> getName() + " has been cleanly disabled!");
     }
 
     @NotNull

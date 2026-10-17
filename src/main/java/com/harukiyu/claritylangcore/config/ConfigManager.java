@@ -88,7 +88,7 @@ public class ConfigManager {
                     return s;
                 }
             }
-            plugin.getLogger().log(Level.WARNING, "Unknown sound effect: " + key + ", using fallback.");
+            plugin.getLogger().log(Level.WARNING, () -> "Unknown sound effect: " + key + ", using fallback.");
             return fallback;
         }
     }

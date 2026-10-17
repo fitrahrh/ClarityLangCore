@@ -113,7 +113,7 @@ public class PlayerLanguageManager {
             }
             config.save(dataFile);
         } catch (IOException e) {
-            plugin.getLogger().log(Level.SEVERE, "Failed to save player language data to " + dataFile.getName(), e);
+            plugin.getLogger().log(Level.SEVERE, e, () -> "Failed to save player language data to " + dataFile.getName());
         }
     }
 
