@@ -1,0 +1,47 @@
+# ==============================================================================
+#                      ClarityLangCore - Configuration
+#           Centralized Multi-Language Core for Paper 26.3
+# ==============================================================================
+
+# Default server language code (used when a player's locale is not supported or not set)
+default_language: "en_US"
+
+# Automatically detect the player's client language from their Minecraft settings?
+# If true and the player has not manually set a language, client locale will be used.
+auto_detect_client_language: true
+
+# Should we automatically show the Native Dialog language selection menu when a player joins for the first time?
+prompt_on_first_join: true
+
+# Delay in ticks (20 ticks = 1 second) before showing the dialog on first join
+first_join_delay_ticks: 25
+
+# Native Dialog API Settings (Minecraft 1.21.7+ / Paper 26.3)
+dialog:
+  # Selection style:
+  # MULTI_ACTION  = Clean interactive button grid (1-click to select language)
+  # SINGLE_OPTION = Radio button choices list with Confirm & Cancel buttons
+  mode: "MULTI_ACTION"
+  
+  # Number of columns for MULTI_ACTION button grid (usually 2 or 3)
+  columns: 2
+  
+  # Allow closing the dialog with the ESC key
+  can_close_with_escape: true
+  
+  # Show an interactive Notice Dialog popup after language is selected?
+  # If false, simply closes the dialog and sends a chat confirmation message.
+  show_notice_after_selection: false
+
+# Sound effects for dialog interactions
+sound:
+  enabled: true
+  success: "minecraft:entity.experience_orb.pickup"
+  open_dialog: "minecraft:ui.button.click"
+
+# Storage configuration
+storage:
+  # Storage type: Currently supports YAML
+  type: "YAML"
+  # Save player preferences asynchronously to avoid main thread latency
+  async_save: true

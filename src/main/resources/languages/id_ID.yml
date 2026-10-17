@@ -1,0 +1,56 @@
+# ==============================================================================
+#                 ClarityLangCore - Bahasa Indonesia (id_ID)
+# ==============================================================================
+
+# Metadata Bahasa
+language:
+  code: "id_ID"
+  name: "Bahasa Indonesia"
+  flag: "🇮🇩"
+  fallback: "en_US"
+
+# Pesan Core Plugin
+core:
+  prefix: "<gradient:#38ef7d:#11998e><bold>[ClarityLang]</bold></gradient> "
+  
+  commands:
+    help:
+      - "<gradient:#38ef7d:#11998e><bold>═════ ClarityLangCore Bantuan ═════</bold></gradient>"
+      - "<yellow>/lang</yellow> <gray>- Buka menu dialog pilih bahasa.</gray>"
+      - "<yellow>/lang <kode></yellow> <gray>- Ganti bahasa secara langsung (contoh: /lang en_US).</gray>"
+      - "<yellow>/lang list</yellow> <gray>- Lihat daftar semua bahasa yang tersedia.</gray>"
+      - "<yellow>/lang reset</yellow> <gray>- Reset ke deteksi otomatis bahasa client.</gray>"
+      - "<yellow>/lang reload</yellow> <gray>- Muat ulang konfigurasi dan terjemahan (Admin).</gray>"
+      - "<gradient:#38ef7d:#11998e><bold>══════════════════════════════════</bold></gradient>"
+    success: "<prefix><green>Bahasa Anda berhasil diubah ke <yellow><lang_name></yellow> (<lang_code>)!</green>"
+    reset: "<prefix><green>Preferensi bahasa di-reset ke deteksi otomatis: <yellow><lang_name></yellow> (<lang_code>)!</green>"
+    invalid_language: "<prefix><red>Bahasa '<lang>' tidak ditemukan! Gunakan <yellow>/lang list</yellow> untuk melihat bahasa yang tersedia.</red>"
+    list_header: "<gradient:#38ef7d:#11998e><bold>═══ Daftar Bahasa yang Tersedia ═══</bold></gradient>"
+    list_entry: "<gray>- <flag> <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
+    list_active_tag: "<green>[Sedang Digunakan]</green>"
+    no_permission: "<prefix><red>Anda tidak memiliki izin untuk menjalankan perintah ini!</red>"
+    only_players: "<prefix><red>Perintah ini hanya dapat dijalankan oleh pemain!</red>"
+    reload_success: "<prefix><green>Seluruh file konfigurasi dan bahasa berhasil dimuat ulang dalam <yellow><time>ms</yellow>!</green>"
+  
+  dialog:
+    title: "<gradient:#38ef7d:#11998e><bold>PILIH BAHASA / SELECT LANGUAGE</bold></gradient>"
+    body_header: "<white>Selamat datang di server! Pilih bahasa pilihan Anda.</white>"
+    body_current: "<gray>Bahasa aktif Anda: <yellow><current_flag> <current_name></yellow></gray>"
+    body_client_detected: "<gray>Bahasa client Minecraft Anda: <aqua><client_flag> <client_name></aqua></gray>"
+    body_instruction: "<gray>Klik salah satu tombol bahasa di bawah ini untuk memilih bahasa:</gray>"
+    radio_label: "<white>Pilih bahasa yang Anda inginkan:</white>"
+    button_tooltip: "<gray>Klik untuk memilih bahasa <yellow><lang_name></yellow></gray>"
+    button_active_badge: "<green>✓ </green>"
+    button_confirm: "<green>✔ Konfirmasi</green>"
+    button_confirm_tooltip: "<gray>Klik untuk menyimpan bahasa yang dipilih</gray>"
+    button_cancel: "<red>✖ Batal / Tutup</red>"
+    button_cancel_tooltip: "<gray>Klik untuk menutup menu ini</gray>"
+    notice_title: "<green>Bahasa Diperbarui</green>"
+    notice_message: "<white>Bahasa berhasil diubah menjadi <yellow><lang_name></yellow>!</white>"
+
+# Contoh pesan untuk modul plugin fungsional lain (bisa diisi atau ditambahkan oleh plugin lain)
+economy:
+  balance: "<prefix><gray>Saldo Anda: <gold><amount></gold></gray>"
+  pay_success: "<prefix><green>Berhasil mengirim <gold><amount></gold> kepada <yellow><target></yellow>.</green>"
+  pay_received: "<prefix><green>Anda menerima <gold><amount></gold> dari <yellow><sender></yellow>!</green>"
+  insufficient_funds: "<prefix><red>Saldo Anda tidak mencukupi untuk melakukan transaksi ini!</red>"

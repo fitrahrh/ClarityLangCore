@@ -1,0 +1,55 @@
+# ==============================================================================
+#                     ClarityLangCore - 日本語 (ja_JP)
+# ==============================================================================
+
+# 言語メタデータ
+language:
+  code: "ja_JP"
+  name: "日本語"
+  flag: "🇯🇵"
+  fallback: "en_US"
+
+# コアプラグインメッセージ
+core:
+  prefix: "<gradient:#38ef7d:#11998e><bold>[ClarityLang]</bold></gradient> "
+  
+  commands:
+    help:
+      - "<gradient:#38ef7d:#11998e><bold>═════ ClarityLangCore ヘルプ ═════</bold></gradient>"
+      - "<yellow>/lang</yellow> <gray>- 言語選択ダイアログを開きます。</gray>"
+      - "<yellow>/lang <コード></yellow> <gray>- 言語を直接変更します (例: /lang en_US)。</gray>"
+      - "<yellow>/lang list</yellow> <gray>- 利用可能な言語の一覧を表示します。</gray>"
+      - "<yellow>/lang reset</yellow> <gray>- クライアント自動検出言語にリセットします。</gray>"
+      - "<yellow>/lang reload</yellow> <gray>- 設定と言語ファイルを再読み込みします (管理者)。</gray>"
+      - "<gradient:#38ef7d:#11998e><bold>═════════════════════════════════</bold></gradient>"
+    success: "<prefix><green>言語が <yellow><lang_name></yellow> (<lang_code>) に変更されました！</green>"
+    reset: "<prefix><green>言語設定がクライアント自動検出にリセットされました: <yellow><lang_name></yellow> (<lang_code>)！</green>"
+    invalid_language: "<prefix><red>言語 '<lang>' が見つかりませんでした！<yellow>/lang list</yellow> で一覧を確認してください。</red>"
+    list_header: "<gradient:#38ef7d:#11998e><bold>═══ 利用可能な言語一覧 ═══</bold></gradient>"
+    list_entry: "<gray>- <flag> <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
+    list_active_tag: "<green>[使用中]</green>"
+    no_permission: "<prefix><red>このコマンドを実行する権限がありません！</red>"
+    only_players: "<prefix><red>このコマンドはプレイヤーのみが実行できます！</red>"
+    reload_success: "<prefix><green>すべての設定と言語ファイルを再読み込みしました (<yellow><time>ms</yellow>)！</green>"
+  
+  dialog:
+    title: "<gradient:#38ef7d:#11998e><bold>言語選択 / SELECT LANGUAGE</bold></gradient>"
+    body_header: "<white>サーバーへようこそ！希望の言語を選択してください。</white>"
+    body_current: "<gray>現在使用中の言語: <yellow><current_flag> <current_name></yellow></gray>"
+    body_client_detected: "<gray>検出されたMinecraftクライアント言語: <aqua><client_flag> <client_name></aqua></gray>"
+    body_instruction: "<gray>下のボタンをクリックして使用したい言語を選択してください：</gray>"
+    radio_label: "<white>言語を選択してください：</white>"
+    button_tooltip: "<gray>クリックして <yellow><lang_name></yellow> を選択</gray>"
+    button_active_badge: "<green>✓ </green>"
+    button_confirm: "<green>✔ 決定</green>"
+    button_confirm_tooltip: "<gray>クリックして選択した言語を保存</gray>"
+    button_cancel: "<red>✖ キャンセル / 閉じる</red>"
+    button_cancel_tooltip: "<gray>クリックしてこのメニューを閉じます</gray>"
+    notice_title: "<green>言語が更新されました</green>"
+    notice_message: "<white>言語が正常に <yellow><lang_name></yellow> に変更されました！</white>"
+
+economy:
+  balance: "<prefix><gray>現在の所持金: <gold><amount></gold></gray>"
+  pay_success: "<prefix><green><yellow><target></yellow> に <gold><amount></gold> を送金しました。</green>"
+  pay_received: "<prefix><green><yellow><sender></yellow> から <gold><amount></gold> を受け取りました！</green>"
+  insufficient_funds: "<prefix><red>所持金が不足しているため、取引できません！</red>"

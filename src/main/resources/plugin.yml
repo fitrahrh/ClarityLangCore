@@ -1,0 +1,13 @@
+name: ClarityLangCore
+version: '${version}'
+main: com.harukiyu.claritylangcore.ClarityLangCore
+api-version: '1.21'
+description: Centralized multi-language core API plugin for Clarity Network with Native Dialog API
+author: Harukiyu
+permissions:
+  claritylang.use:
+    description: Allows using language commands and dialog
+    default: true
+  claritylang.admin:
+    description: Allows reloading language core configurations
+    default: op

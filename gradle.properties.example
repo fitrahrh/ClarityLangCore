@@ -1,0 +1,10 @@
+# ==========================================
+# ClarityLangCore - Local Gradle Configuration Template
+# ==========================================
+# Copy this file to "gradle.properties" if you need to point Gradle
+# to a specific JDK 25 installation (e.g. if system PATH is Java 8):
+#
+# org.gradle.java.home=C:/Java/jdk-25.0.3
+#
+# On Linux / macOS:
+# org.gradle.java.home=/usr/lib/jvm/java-25-openjdk

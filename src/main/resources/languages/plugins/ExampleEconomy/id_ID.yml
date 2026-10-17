@@ -1,0 +1,7 @@
+# External Plugin: ExampleEconomy
+balance: "<prefix><gray>Saldo Anda saat ini: <gold>Rp<amount></gold></gray>"
+pay_success: "<prefix><green>Berhasil mentransfer <gold>Rp<amount></gold> kepada <yellow><target></yellow>.</green>"
+pay_received: "<prefix><green>Anda menerima transfer <gold>Rp<amount></gold> dari <yellow><sender></yellow>!</green>"
+insufficient_funds: "<prefix><red>Saldo Anda tidak cukup untuk menyelesaikan transfer ini!</red>"
+bank_deposit: "<prefix><green>Berhasil menyetor <gold>Rp<amount></gold> ke rekening bank Anda.</green>"
+bank_withdraw: "<prefix><green>Berhasil menarik <gold>Rp<amount></gold> dari rekening bank Anda.</green>"

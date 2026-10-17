@@ -1,0 +1,55 @@
+# ==============================================================================
+#                 ClarityLangCore - Português (Brasil) (pt_BR)
+# ==============================================================================
+
+# Metadados do Idioma
+language:
+  code: "pt_BR"
+  name: "Português"
+  flag: "🇧🇷"
+  fallback: "en_US"
+
+# Mensagens do Plugin Core
+core:
+  prefix: "<gradient:#38ef7d:#11998e><bold>[ClarityLang]</bold></gradient> "
+  
+  commands:
+    help:
+      - "<gradient:#38ef7d:#11998e><bold>═════ Ajuda do ClarityLangCore ═════</bold></gradient>"
+      - "<yellow>/lang</yellow> <gray>- Abrir o menu de diálogo de seleção de idioma.</gray>"
+      - "<yellow>/lang <código></yellow> <gray>- Mudar idioma diretamente (ex: /lang en_US).</gray>"
+      - "<yellow>/lang list</yellow> <gray>- Ver lista de todos os idiomas disponíveis.</gray>"
+      - "<yellow>/lang reset</yellow> <gray>- Redefinir para detecção automática do cliente.</gray>"
+      - "<yellow>/lang reload</yellow> <gray>- Recarregar arquivos de configuração e idioma (Admin).</gray>"
+      - "<gradient:#38ef7d:#11998e><bold>═════════════════════════════════════</bold></gradient>"
+    success: "<prefix><green>Seu idioma foi alterado para <yellow><lang_name></yellow> (<lang_code>)!</green>"
+    reset: "<prefix><green>Preferência de idioma redefinida para detecção automática: <yellow><lang_name></yellow> (<lang_code>)!</green>"
+    invalid_language: "<prefix><red>O idioma '<lang>' não foi encontrado! Use <yellow>/lang list</yellow> para ver os idiomas disponíveis.</red>"
+    list_header: "<gradient:#38ef7d:#11998e><bold>═══ Idiomas Disponíveis ═══</bold></gradient>"
+    list_entry: "<gray>- <flag> <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
+    list_active_tag: "<green>[Ativo]</green>"
+    no_permission: "<prefix><red>Você não tem permissão para executar este comando!</red>"
+    only_players: "<prefix><red>Este comando só pode ser executado por jogadores!</red>"
+    reload_success: "<prefix><green>Todas as configurações e idiomas foram recarregados em <yellow><time>ms</yellow>!</green>"
+  
+  dialog:
+    title: "<gradient:#38ef7d:#11998e><bold>SELECIONAR IDIOMA</bold></gradient>"
+    body_header: "<white>Bem-vindo ao servidor! Escolha seu idioma de preferência.</white>"
+    body_current: "<gray>Seu idioma ativo atual: <yellow><current_flag> <current_name></yellow></gray>"
+    body_client_detected: "<gray>Idioma detectado no Minecraft: <aqua><client_flag> <client_name></aqua></gray>"
+    body_instruction: "<gray>Clique em qualquer botão abaixo para escolher o seu idioma:</gray>"
+    radio_label: "<white>Selecione o seu idioma preferido:</white>"
+    button_tooltip: "<gray>Clique para escolher <yellow><lang_name></yellow></gray>"
+    button_active_badge: "<green>✓ </green>"
+    button_confirm: "<green>✔ Confirmar</green>"
+    button_confirm_tooltip: "<gray>Clique para salvar o idioma selecionado</gray>"
+    button_cancel: "<red>✖ Cancelar / Fechar</red>"
+    button_cancel_tooltip: "<gray>Clique para fechar este menu</gray>"
+    notice_title: "<green>Idioma Atualizado</green>"
+    notice_message: "<white>Idioma alterado com sucesso para <yellow><lang_name></yellow>!</white>"
+
+economy:
+  balance: "<prefix><gray>Seu saldo: <gold><amount></gold></gray>"
+  pay_success: "<prefix><green>Enviou com sucesso <gold><amount></gold> para <yellow><target></yellow>.</green>"
+  pay_received: "<prefix><green>Você recebeu <gold><amount></gold> de <yellow><sender></yellow>!</green>"
+  insufficient_funds: "<prefix><red>Saldo insuficiente para realizar esta transação!</red>"

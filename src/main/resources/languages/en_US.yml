@@ -1,0 +1,56 @@
+# ==============================================================================
+#                     ClarityLangCore - English (en_US)
+# ==============================================================================
+
+# Language Metadata
+language:
+  code: "en_US"
+  name: "English"
+  flag: "🇬🇧"
+  fallback: "en_US"
+
+# Core Plugin Messages
+core:
+  prefix: "<gradient:#38ef7d:#11998e><bold>[ClarityLang]</bold></gradient> "
+  
+  commands:
+    help:
+      - "<gradient:#38ef7d:#11998e><bold>═════ ClarityLangCore Help ═════</bold></gradient>"
+      - "<yellow>/lang</yellow> <gray>- Open the language selection dialog.</gray>"
+      - "<yellow>/lang <code></yellow> <gray>- Change language directly (e.g. /lang id_ID).</gray>"
+      - "<yellow>/lang list</yellow> <gray>- View all available languages.</gray>"
+      - "<yellow>/lang reset</yellow> <gray>- Reset to client auto-detect language.</gray>"
+      - "<yellow>/lang reload</yellow> <gray>- Reload configurations and language files (Admin).</gray>"
+      - "<gradient:#38ef7d:#11998e><bold>══════════════════════════════════</bold></gradient>"
+    success: "<prefix><green>Your language has been changed to <yellow><lang_name></yellow> (<lang_code>)!</green>"
+    reset: "<prefix><green>Language preference reset to auto-detect: <yellow><lang_name></yellow> (<lang_code>)!</green>"
+    invalid_language: "<prefix><red>Language '<lang>' was not found! Use <yellow>/lang list</yellow> to view available languages.</red>"
+    list_header: "<gradient:#38ef7d:#11998e><bold>═══ Available Languages ═══</bold></gradient>"
+    list_entry: "<gray>- <flag> <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
+    list_active_tag: "<green>[Active]</green>"
+    no_permission: "<prefix><red>You do not have permission to execute this command!</red>"
+    only_players: "<prefix><red>This command can only be executed by players!</red>"
+    reload_success: "<prefix><green>All configurations and language files reloaded in <yellow><time>ms</yellow>!</green>"
+  
+  dialog:
+    title: "<gradient:#38ef7d:#11998e><bold>SELECT LANGUAGE / PILIH BAHASA</bold></gradient>"
+    body_header: "<white>Welcome to the server! Select your preferred language.</white>"
+    body_current: "<gray>Your current active language: <yellow><current_flag> <current_name></yellow></gray>"
+    body_client_detected: "<gray>Detected Minecraft client language: <aqua><client_flag> <client_name></aqua></gray>"
+    body_instruction: "<gray>Click any button below to choose your language:</gray>"
+    radio_label: "<white>Select your preferred language:</white>"
+    button_tooltip: "<gray>Click to choose <yellow><lang_name></yellow></gray>"
+    button_active_badge: "<green>✓ </green>"
+    button_confirm: "<green>✔ Confirm</green>"
+    button_confirm_tooltip: "<gray>Click to save the selected language</gray>"
+    button_cancel: "<red>✖ Cancel / Close</red>"
+    button_cancel_tooltip: "<gray>Click to close this menu</gray>"
+    notice_title: "<green>Language Updated</green>"
+    notice_message: "<white>Language successfully changed to <yellow><lang_name></yellow>!</white>"
+
+# Example messages for other custom server plugins
+economy:
+  balance: "<prefix><gray>Your balance: <gold><amount></gold></gray>"
+  pay_success: "<prefix><green>Successfully sent <gold><amount></gold> to <yellow><target></yellow>.</green>"
+  pay_received: "<prefix><green>You received <gold><amount></gold> from <yellow><sender></yellow>!</green>"
+  insufficient_funds: "<prefix><red>You do not have enough funds for this transaction!</red>"

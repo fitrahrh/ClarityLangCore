@@ -1,0 +1,7 @@
+# External Plugin: ExampleEconomy
+balance: "<prefix><gray>Your current balance: <gold>$<amount></gold></gray>"
+pay_success: "<prefix><green>You sent <gold>$<amount></gold> to <yellow><target></yellow>.</green>"
+pay_received: "<prefix><green>You received <gold>$<amount></gold> from <yellow><sender></yellow>!</green>"
+insufficient_funds: "<prefix><red>You do not have enough money to complete this transfer!</red>"
+bank_deposit: "<prefix><green>Deposited <gold>$<amount></gold> into your bank account.</green>"
+bank_withdraw: "<prefix><green>Withdrew <gold>$<amount></gold> from your bank account.</green>"

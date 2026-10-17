@@ -1,0 +1,55 @@
+# ==============================================================================
+#                     ClarityLangCore - Русский (ru_RU)
+# ==============================================================================
+
+# Метаданные языка
+language:
+  code: "ru_RU"
+  name: "Русский"
+  flag: "🇷🇺"
+  fallback: "en_US"
+
+# Сообщения ядра плагина
+core:
+  prefix: "<gradient:#38ef7d:#11998e><bold>[ClarityLang]</bold></gradient> "
+  
+  commands:
+    help:
+      - "<gradient:#38ef7d:#11998e><bold>═════ ClarityLangCore Помощь ═════</bold></gradient>"
+      - "<yellow>/lang</yellow> <gray>- Открыть диалог выбора языка.</gray>"
+      - "<yellow>/lang <код></yellow> <gray>- Сменить язык напрямую (напр. /lang en_US).</gray>"
+      - "<yellow>/lang list</yellow> <gray>- Список всех доступных языков.</gray>"
+      - "<yellow>/lang reset</yellow> <gray>- Сбросить на автоопределение из клиента.</gray>"
+      - "<yellow>/lang reload</yellow> <gray>- Перезагрузить файлы конфигурации и языков (Админ).</gray>"
+      - "<gradient:#38ef7d:#11998e><bold>═════════════════════════════════</bold></gradient>"
+    success: "<prefix><green>Ваш язык успешно изменен на <yellow><lang_name></yellow> (<lang_code>)!</green>"
+    reset: "<prefix><green>Язык сброшен на автоопределение: <yellow><lang_name></yellow> (<lang_code>)!</green>"
+    invalid_language: "<prefix><red>Язык '<lang>' не найден! Используйте <yellow>/lang list</yellow> для просмотра списка.</red>"
+    list_header: "<gradient:#38ef7d:#11998e><bold>═══ Доступные языки ═══</bold></gradient>"
+    list_entry: "<gray>- <flag> <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
+    list_active_tag: "<green>[Используется]</green>"
+    no_permission: "<prefix><red>У вас нет прав для выполнения этой команды!</red>"
+    only_players: "<prefix><red>Эту команду могут выполнять только игроки!</red>"
+    reload_success: "<prefix><green>Все конфигурации и файлы языков перезагружены за <yellow><time>ms</yellow>!</green>"
+  
+  dialog:
+    title: "<gradient:#38ef7d:#11998e><bold>ВЫБОР ЯЗЫКА / SELECT LANGUAGE</bold></gradient>"
+    body_header: "<white>Добро пожаловать на сервер! Выберите предпочитаемый язык.</white>"
+    body_current: "<gray>Текущий активный язык: <yellow><current_flag> <current_name></yellow></gray>"
+    body_client_detected: "<gray>Язык клиента Minecraft: <aqua><client_flag> <client_name></aqua></gray>"
+    body_instruction: "<gray>Нажмите на любую кнопку ниже, чтобы выбрать язык:</gray>"
+    radio_label: "<white>Выберите язык:</white>"
+    button_tooltip: "<gray>Нажмите для выбора <yellow><lang_name></yellow></gray>"
+    button_active_badge: "<green>✓ </green>"
+    button_confirm: "<green>✔ Подтвердить</green>"
+    button_confirm_tooltip: "<gray>Нажмите для сохранения выбранного языка</gray>"
+    button_cancel: "<red>✖ Отмена / Закрыть</red>"
+    button_cancel_tooltip: "<gray>Нажмите, чтобы закрыть меню</gray>"
+    notice_title: "<green>Язык обновлен</green>"
+    notice_message: "<white>Язык успешно изменен на <yellow><lang_name></yellow>!</white>"
+
+economy:
+  balance: "<prefix><gray>Ваш баланс: <gold><amount></gold></gray>"
+  pay_success: "<prefix><green>Успешно отправлено <gold><amount></gold> игроку <yellow><target></yellow>.</green>"
+  pay_received: "<prefix><green>Вы получили <gold><amount></gold> от <yellow><sender></yellow>!</green>"
+  insufficient_funds: "<prefix><red>Недостаточно средств для совершения транзакции!</red>"
