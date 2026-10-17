@@ -6,7 +6,7 @@
 language:
   code: "es_ES"
   name: "Español"
-  flag: "🇪🇸"
+  flag: "[ES]"
   fallback: "en_US"
 
 # Mensajes del Plugin Core
@@ -15,18 +15,18 @@ core:
   
   commands:
     help:
-      - "<gradient:#38ef7d:#11998e><bold>═════ Ayuda de ClarityLangCore ═════</bold></gradient>"
+      - "<gradient:#38ef7d:#11998e><bold>===== Ayuda de ClarityLangCore =====</bold></gradient>"
       - "<yellow>/lang</yellow> <gray>- Abrir el menú de diálogo para seleccionar idioma.</gray>"
       - "<yellow>/lang <código></yellow> <gray>- Cambiar idioma directamente (ej: /lang en_US).</gray>"
       - "<yellow>/lang list</yellow> <gray>- Ver lista de todos los idiomas disponibles.</gray>"
       - "<yellow>/lang reset</yellow> <gray>- Restablecer a la detección automática del cliente.</gray>"
       - "<yellow>/lang reload</yellow> <gray>- Recargar configuraciones e idiomas (Admin).</gray>"
-      - "<gradient:#38ef7d:#11998e><bold>═════════════════════════════════════</bold></gradient>"
+      - "<gradient:#38ef7d:#11998e><bold>====================================</bold></gradient>"
     success: "<prefix><green>¡Tu idioma ha sido cambiado a <yellow><lang_name></yellow> (<lang_code>)!</green>"
     reset: "<prefix><green>Preferencia de idioma restablecida a detección automática: <yellow><lang_name></yellow> (<lang_code>)!</green>"
     invalid_language: "<prefix><red>¡El idioma '<lang>' no fue encontrado! Usa <yellow>/lang list</yellow> para ver los idiomas disponibles.</red>"
-    list_header: "<gradient:#38ef7d:#11998e><bold>═══ Idiomas Disponibles ═══</bold></gradient>"
-    list_entry: "<gray>- <flag> <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
+    list_header: "<gradient:#38ef7d:#11998e><bold>=== Idiomas Disponibles ===</bold></gradient>"
+    list_entry: "<gray>- <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
     list_active_tag: "<green>[Activo]</green>"
     no_permission: "<prefix><red>¡No tienes permiso para ejecutar este comando!</red>"
     only_players: "<prefix><red>¡Este comando solo puede ser ejecutado por jugadores!</red>"
@@ -35,15 +35,15 @@ core:
   dialog:
     title: "<gradient:#38ef7d:#11998e><bold>SELECCIONAR IDIOMA</bold></gradient>"
     body_header: "<white>¡Bienvenido al servidor! Selecciona tu idioma preferido.</white>"
-    body_current: "<gray>Tu idioma activo actual: <yellow><current_flag> <current_name></yellow></gray>"
-    body_client_detected: "<gray>Idioma detectado en tu Minecraft: <aqua><client_flag> <client_name></aqua></gray>"
+    body_current: "<gray>Tu idioma activo: <yellow><current_flag><current_name></yellow></gray>"
+    body_client_detected: "<gray>Idioma detectado en Minecraft: <aqua><client_flag><client_name></aqua></gray>"
     body_instruction: "<gray>Haz clic en cualquier botón de abajo para elegir tu idioma:</gray>"
     radio_label: "<white>Selecciona tu idioma preferido:</white>"
     button_tooltip: "<gray>Haz clic para elegir <yellow><lang_name></yellow></gray>"
-    button_active_badge: "<green>✓ </green>"
-    button_confirm: "<green>✔ Confirmar</green>"
+    button_active_badge: "<green>● </green>"
+    button_confirm: "<green>Confirmar</green>"
     button_confirm_tooltip: "<gray>Haz clic para guardar el idioma seleccionado</gray>"
-    button_cancel: "<red>✖ Cancelar / Cerrar</red>"
+    button_cancel: "<red>Cancelar / Cerrar</red>"
     button_cancel_tooltip: "<gray>Haz clic para cerrar este menú</gray>"
     notice_title: "<green>Idioma Actualizado</green>"
     notice_message: "<white>¡Idioma cambiado exitosamente a <yellow><lang_name></yellow>!</white>"

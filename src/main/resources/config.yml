@@ -33,6 +33,33 @@ dialog:
   # If false, simply closes the dialog and sends a chat confirmation message.
   show_notice_after_selection: false
 
+  # Dialog Body Layout Settings
+  # Controls what text appears in the dialog body. All enabled lines are combined
+  # into a single compact section to avoid excess padding and scrollbars.
+  layout:
+    # Show welcome/header text (e.g. "Selamat datang di server! Pilih bahasa pilihan Anda.")
+    show_header: true
+    
+    # Show player's currently active language (e.g. "Bahasa aktif: Bahasa Indonesia")
+    show_current_language: true
+    
+    # Show auto-detected Minecraft client locale (e.g. "Bahasa client: English")
+    # Set to false to keep dialog compact and scrollbar-free
+    show_client_detected: false
+    
+    # Show instruction text (e.g. "Klik salah satu tombol bahasa...")
+    # Set to false to keep dialog compact and scrollbar-free
+    show_instruction: false
+
+  # Button Appearance
+  buttons:
+    # Display country flags/tags next to language names?
+    # Default is false to keep buttons clean and prevent Minecraft from rendering [I][D] broken emoji boxes.
+    show_flags: false
+    
+    # Symbol/badge shown on the currently active language button (e.g. "● ", "✓ ", "[Active] ", or "")
+    active_badge: "● "
+
 # Sound effects for dialog interactions
 sound:
   enabled: true

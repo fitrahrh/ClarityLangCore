@@ -6,7 +6,7 @@
 language:
   code: "fr_FR"
   name: "Français"
-  flag: "🇫🇷"
+  flag: "[FR]"
   fallback: "en_US"
 
 # Messages du Plugin Core
@@ -15,18 +15,18 @@ core:
   
   commands:
     help:
-      - "<gradient:#38ef7d:#11998e><bold>═════ Aide ClarityLangCore ═════</bold></gradient>"
+      - "<gradient:#38ef7d:#11998e><bold>===== Aide ClarityLangCore =====</bold></gradient>"
       - "<yellow>/lang</yellow> <gray>- Ouvrir le menu de sélection de langue.</gray>"
       - "<yellow>/lang <code></yellow> <gray>- Changer de langue directement (ex: /lang en_US).</gray>"
       - "<yellow>/lang list</yellow> <gray>- Afficher toutes les langues disponibles.</gray>"
       - "<yellow>/lang reset</yellow> <gray>- Réinitialiser sur la détection automatique du client.</gray>"
       - "<yellow>/lang reload</yellow> <gray>- Recharger les configurations et fichiers de langue (Admin).</gray>"
-      - "<gradient:#38ef7d:#11998e><bold>═════════════════════════════════</bold></gradient>"
+      - "<gradient:#38ef7d:#11998e><bold>=================================</bold></gradient>"
     success: "<prefix><green>Votre langue a été changée en <yellow><lang_name></yellow> (<lang_code>) !</green>"
     reset: "<prefix><green>Préférence de langue réinitialisée en détection automatique : <yellow><lang_name></yellow> (<lang_code>) !</green>"
     invalid_language: "<prefix><red>La langue '<lang>' est introuvable ! Utilisez <yellow>/lang list</yellow> pour voir les langues disponibles.</red>"
-    list_header: "<gradient:#38ef7d:#11998e><bold>═══ Langues Disponibles ═══</bold></gradient>"
-    list_entry: "<gray>- <flag> <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
+    list_header: "<gradient:#38ef7d:#11998e><bold>=== Langues Disponibles ===</bold></gradient>"
+    list_entry: "<gray>- <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
     list_active_tag: "<green>[Actif]</green>"
     no_permission: "<prefix><red>Vous n'avez pas la permission d'exécuter cette commande !</red>"
     only_players: "<prefix><red>Cette commande ne peut être exécutée que par des joueurs !</red>"
@@ -35,15 +35,15 @@ core:
   dialog:
     title: "<gradient:#38ef7d:#11998e><bold>CHOISIR LA LANGUE</bold></gradient>"
     body_header: "<white>Bienvenue sur le serveur ! Choisissez votre langue préférée.</white>"
-    body_current: "<gray>Votre langue actuelle : <yellow><current_flag> <current_name></yellow></gray>"
-    body_client_detected: "<gray>Langue détectée dans Minecraft : <aqua><client_flag> <client_name></aqua></gray>"
+    body_current: "<gray>Votre langue actuelle : <yellow><current_flag><current_name></yellow></gray>"
+    body_client_detected: "<gray>Langue du client : <aqua><client_flag><client_name></aqua></gray>"
     body_instruction: "<gray>Cliquez sur l'un des boutons ci-dessous pour choisir votre langue :</gray>"
     radio_label: "<white>Sélectionnez votre langue :</white>"
     button_tooltip: "<gray>Cliquer pour choisir <yellow><lang_name></yellow></gray>"
-    button_active_badge: "<green>✓ </green>"
-    button_confirm: "<green>✔ Confirmer</green>"
+    button_active_badge: "<green>● </green>"
+    button_confirm: "<green>Confirmer</green>"
     button_confirm_tooltip: "<gray>Cliquer pour enregistrer la langue sélectionnée</gray>"
-    button_cancel: "<red>✖ Annuler / Fermer</red>"
+    button_cancel: "<red>Fermer</red>"
     button_cancel_tooltip: "<gray>Cliquer pour fermer ce menu</gray>"
     notice_title: "<green>Langue Mise à Jour</green>"
     notice_message: "<white>Langue changée avec succès en <yellow><lang_name></yellow> !</white>"

@@ -5,6 +5,7 @@ import com.harukiyu.claritylangcore.api.Language;
 import com.harukiyu.claritylangcore.config.ConfigManager;
 import com.harukiyu.claritylangcore.language.LanguageManager;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -58,12 +59,13 @@ public class PlayerLanguageManager {
         }
 
         YamlConfiguration config = YamlConfiguration.loadConfiguration(dataFile);
-        if (config.isConfigurationSection("players")) {
-            for (String key : config.getConfigurationSection("players").getKeys(false)) {
+        ConfigurationSection playersSection = config.getConfigurationSection("players");
+        if (playersSection != null) {
+            for (String key : playersSection.getKeys(false)) {
                 try {
                     UUID uuid = UUID.fromString(key);
                     knownPlayers.add(uuid);
-                    String lang = config.getString("players." + key + ".language");
+                    String lang = playersSection.getString(key + ".language");
                     if (lang != null && !lang.isBlank() && !lang.equalsIgnoreCase("AUTO")) {
                         playerPreferences.put(uuid, lang);
                     }

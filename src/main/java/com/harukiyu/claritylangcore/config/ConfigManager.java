@@ -5,6 +5,7 @@ import org.bukkit.Sound;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Locale;
 import java.util.logging.Level;
 
 /**
@@ -28,6 +29,16 @@ public class ConfigManager {
     private int dialogColumns;
     private boolean canCloseWithEscape;
     private boolean showNoticeAfterSelection;
+
+    // Layout toggles
+    private boolean showBodyHeader;
+    private boolean showCurrentLanguage;
+    private boolean showClientDetected;
+    private boolean showInstruction;
+
+    // Button settings
+    private boolean showFlags;
+    private String activeBadge;
 
     private boolean soundEnabled;
     private Sound successSound;
@@ -55,7 +66,8 @@ public class ConfigManager {
         this.firstJoinDelayTicks = config.getLong("first_join_delay_ticks", 25L);
 
         // Dialog
-        String modeStr = config.getString("dialog.mode", "MULTI_ACTION").toUpperCase();
+        String rawMode = config.getString("dialog.mode");
+        String modeStr = (rawMode != null) ? rawMode.toUpperCase(Locale.ROOT) : "MULTI_ACTION";
         try {
             this.dialogMode = DialogMode.valueOf(modeStr);
         } catch (IllegalArgumentException e) {
@@ -65,6 +77,16 @@ public class ConfigManager {
         this.dialogColumns = Math.max(1, Math.min(6, config.getInt("dialog.columns", 2)));
         this.canCloseWithEscape = config.getBoolean("dialog.can_close_with_escape", true);
         this.showNoticeAfterSelection = config.getBoolean("dialog.show_notice_after_selection", false);
+
+        // Dialog layout toggles
+        this.showBodyHeader = config.getBoolean("dialog.layout.show_header", true);
+        this.showCurrentLanguage = config.getBoolean("dialog.layout.show_current_language", true);
+        this.showClientDetected = config.getBoolean("dialog.layout.show_client_detected", false);
+        this.showInstruction = config.getBoolean("dialog.layout.show_instruction", false);
+
+        // Button formatting
+        this.showFlags = config.getBoolean("dialog.buttons.show_flags", false);
+        this.activeBadge = config.getString("dialog.buttons.active_badge", "● ");
 
         // Sound
         this.soundEnabled = config.getBoolean("sound.enabled", true);
@@ -125,6 +147,31 @@ public class ConfigManager {
 
     public boolean isShowNoticeAfterSelection() {
         return showNoticeAfterSelection;
+    }
+
+    public boolean isShowBodyHeader() {
+        return showBodyHeader;
+    }
+
+    public boolean isShowCurrentLanguage() {
+        return showCurrentLanguage;
+    }
+
+    public boolean isShowClientDetected() {
+        return showClientDetected;
+    }
+
+    public boolean isShowInstruction() {
+        return showInstruction;
+    }
+
+    public boolean isShowFlags() {
+        return showFlags;
+    }
+
+    @NotNull
+    public String getActiveBadge() {
+        return activeBadge != null ? activeBadge : "";
     }
 
     public boolean isSoundEnabled() {

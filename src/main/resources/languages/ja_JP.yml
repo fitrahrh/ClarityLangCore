@@ -6,7 +6,7 @@
 language:
   code: "ja_JP"
   name: "日本語"
-  flag: "🇯🇵"
+  flag: "[JP]"
   fallback: "en_US"
 
 # コアプラグインメッセージ
@@ -15,18 +15,18 @@ core:
   
   commands:
     help:
-      - "<gradient:#38ef7d:#11998e><bold>═════ ClarityLangCore ヘルプ ═════</bold></gradient>"
+      - "<gradient:#38ef7d:#11998e><bold>===== ClarityLangCore ヘルプ =====</bold></gradient>"
       - "<yellow>/lang</yellow> <gray>- 言語選択ダイアログを開きます。</gray>"
       - "<yellow>/lang <コード></yellow> <gray>- 言語を直接変更します (例: /lang en_US)。</gray>"
       - "<yellow>/lang list</yellow> <gray>- 利用可能な言語の一覧を表示します。</gray>"
       - "<yellow>/lang reset</yellow> <gray>- クライアント自動検出言語にリセットします。</gray>"
       - "<yellow>/lang reload</yellow> <gray>- 設定と言語ファイルを再読み込みします (管理者)。</gray>"
-      - "<gradient:#38ef7d:#11998e><bold>═════════════════════════════════</bold></gradient>"
+      - "<gradient:#38ef7d:#11998e><bold>=================================</bold></gradient>"
     success: "<prefix><green>言語が <yellow><lang_name></yellow> (<lang_code>) に変更されました！</green>"
     reset: "<prefix><green>言語設定がクライアント自動検出にリセットされました: <yellow><lang_name></yellow> (<lang_code>)！</green>"
     invalid_language: "<prefix><red>言語 '<lang>' が見つかりませんでした！<yellow>/lang list</yellow> で一覧を確認してください。</red>"
-    list_header: "<gradient:#38ef7d:#11998e><bold>═══ 利用可能な言語一覧 ═══</bold></gradient>"
-    list_entry: "<gray>- <flag> <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
+    list_header: "<gradient:#38ef7d:#11998e><bold>=== 利用可能な言語一覧 ===</bold></gradient>"
+    list_entry: "<gray>- <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
     list_active_tag: "<green>[使用中]</green>"
     no_permission: "<prefix><red>このコマンドを実行する権限がありません！</red>"
     only_players: "<prefix><red>このコマンドはプレイヤーのみが実行できます！</red>"
@@ -35,15 +35,15 @@ core:
   dialog:
     title: "<gradient:#38ef7d:#11998e><bold>言語選択 / SELECT LANGUAGE</bold></gradient>"
     body_header: "<white>サーバーへようこそ！希望の言語を選択してください。</white>"
-    body_current: "<gray>現在使用中の言語: <yellow><current_flag> <current_name></yellow></gray>"
-    body_client_detected: "<gray>検出されたMinecraftクライアント言語: <aqua><client_flag> <client_name></aqua></gray>"
+    body_current: "<gray>現在の言語: <yellow><current_flag><current_name></yellow></gray>"
+    body_client_detected: "<gray>クライアント言語: <aqua><client_flag><client_name></aqua></gray>"
     body_instruction: "<gray>下のボタンをクリックして使用したい言語を選択してください：</gray>"
     radio_label: "<white>言語を選択してください：</white>"
     button_tooltip: "<gray>クリックして <yellow><lang_name></yellow> を選択</gray>"
-    button_active_badge: "<green>✓ </green>"
-    button_confirm: "<green>✔ 決定</green>"
+    button_active_badge: "<green>● </green>"
+    button_confirm: "<green>決定</green>"
     button_confirm_tooltip: "<gray>クリックして選択した言語を保存</gray>"
-    button_cancel: "<red>✖ キャンセル / 閉じる</red>"
+    button_cancel: "<red>閉じる</red>"
     button_cancel_tooltip: "<gray>クリックしてこのメニューを閉じます</gray>"
     notice_title: "<green>言語が更新されました</green>"
     notice_message: "<white>言語が正常に <yellow><lang_name></yellow> に変更されました！</white>"

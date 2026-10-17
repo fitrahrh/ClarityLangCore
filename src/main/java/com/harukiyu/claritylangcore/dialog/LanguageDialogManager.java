@@ -63,7 +63,7 @@ public class LanguageDialogManager {
     }
 
     /**
-     * Builds and opens a MULTI_ACTION button grid dialog.
+     * Builds and opens a clean MULTI_ACTION button grid dialog.
      */
     private void openMultiActionDialog(@NotNull Player player,
                                        @NotNull Language currentLang,
@@ -72,7 +72,7 @@ public class LanguageDialogManager {
         // Dialog Title
         Component title = languageManager.getComponent("core:dialog.title", player);
 
-        // Dialog Body
+        // Dialog Body (unified into a single clean body without excessive padding/scrollbars)
         List<DialogBody> bodyElements = buildDialogBody(player, currentLang, clientLang, clientLocale);
 
         // Action Buttons for each language
@@ -81,8 +81,11 @@ public class LanguageDialogManager {
 
         for (Language lang : registered) {
             boolean isActive = lang.getCode().equalsIgnoreCase(currentLang.getCode());
-            String badge = isActive ? "✓ " : "";
-            Component label = Component.text(badge + lang.getFlag() + " " + lang.getName());
+            String badge = isActive ? configManager.getActiveBadge() : "";
+            String flagPart = (configManager.isShowFlags() && lang.getFlag() != null && !lang.getFlag().isBlank())
+                    ? lang.getFlag() + " " : "";
+
+            Component label = Component.text(badge + flagPart + lang.getName());
 
             Component tooltip = languageManager.getComponent("core:dialog.button_tooltip", player,
                     Placeholder.unparsed("lang_name", lang.getName())
@@ -141,7 +144,9 @@ public class LanguageDialogManager {
 
         for (Language lang : registered) {
             boolean isActive = lang.getCode().equalsIgnoreCase(currentLang.getCode());
-            Component optionLabel = Component.text(lang.getFlag() + " " + lang.getName());
+            String flagPart = (configManager.isShowFlags() && lang.getFlag() != null && !lang.getFlag().isBlank())
+                    ? lang.getFlag() + " " : "";
+            Component optionLabel = Component.text(flagPart + lang.getName());
             entries.add(SingleOptionDialogInput.OptionEntry.create(lang.getCode(), optionLabel, isActive));
         }
 
@@ -198,28 +203,62 @@ public class LanguageDialogManager {
         player.showDialog(dialog);
     }
 
+    /**
+     * Builds a single unified dialog body component to keep the UI clean, compact,
+     * and avoid scrollbars in Minecraft's modal screen.
+     */
     private List<DialogBody> buildDialogBody(@NotNull Player player,
                                              @NotNull Language currentLang,
                                              Language clientLang,
                                              @NotNull Locale clientLocale) {
+        String currentFlagStr = (configManager.isShowFlags() && currentLang.getFlag() != null && !currentLang.getFlag().isBlank())
+                ? currentLang.getFlag() + " " : "";
+        String clientFlagStr = (clientLang != null && configManager.isShowFlags() && clientLang.getFlag() != null && !clientLang.getFlag().isBlank())
+                ? clientLang.getFlag() + " " : "";
+
         Component header = languageManager.getComponent("core:dialog.body_header", player);
         Component current = languageManager.getComponent("core:dialog.body_current", player,
-                Placeholder.unparsed("current_flag", currentLang.getFlag()),
+                Placeholder.unparsed("current_flag", currentFlagStr),
                 Placeholder.unparsed("current_name", currentLang.getName())
         );
         Component client = languageManager.getComponent("core:dialog.body_client_detected", player,
-                Placeholder.unparsed("client_flag", clientLang != null ? clientLang.getFlag() : "🌐"),
+                Placeholder.unparsed("client_flag", clientFlagStr),
                 Placeholder.unparsed("client_name", clientLang != null ? clientLang.getName() : clientLocale.toString())
         );
         Component instruction = languageManager.getComponent("core:dialog.body_instruction", player);
 
-        return List.of(
-                DialogBody.plainMessage(header),
-                DialogBody.plainMessage(current),
-                DialogBody.plainMessage(client),
-                DialogBody.plainMessage(Component.empty()),
-                DialogBody.plainMessage(instruction)
-        );
+        Component combined = Component.empty();
+        boolean hasContent = false;
+
+        if (configManager.isShowBodyHeader()) {
+            combined = combined.append(header);
+            hasContent = true;
+        }
+
+        if (configManager.isShowCurrentLanguage()) {
+            if (hasContent) combined = combined.append(Component.newline());
+            combined = combined.append(current);
+            hasContent = true;
+        }
+
+        if (configManager.isShowClientDetected()) {
+            if (hasContent) combined = combined.append(Component.newline());
+            combined = combined.append(client);
+            hasContent = true;
+        }
+
+        if (configManager.isShowInstruction()) {
+            if (hasContent) combined = combined.append(Component.newline());
+            combined = combined.append(instruction);
+            hasContent = true;
+        }
+
+        if (!hasContent) {
+            return List.of();
+        }
+
+        // Return a single unified DialogBody element so Paper doesn't add multiple cards with huge gaps
+        return List.of(DialogBody.plainMessage(combined));
     }
 
     /**

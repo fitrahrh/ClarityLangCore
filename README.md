@@ -152,6 +152,18 @@ dialog:
   can_close_with_escape: true
   show_notice_after_selection: false
 
+  # Clean layout settings (combined into a single body without scrollbars)
+  layout:
+    show_header: true
+    show_current_language: true
+    show_client_detected: false
+    show_instruction: false
+
+  # Button formatting
+  buttons:
+    show_flags: false
+    active_badge: "● "
+
 sound:
   enabled: true
   success: "minecraft:entity.experience_orb.pickup"

@@ -6,7 +6,7 @@
 language:
   code: "zh_CN"
   name: "简体中文"
-  flag: "🇨🇳"
+  flag: "[CN]"
   fallback: "en_US"
 
 # 核心插件消息
@@ -15,18 +15,18 @@ core:
   
   commands:
     help:
-      - "<gradient:#38ef7d:#11998e><bold>═════ ClarityLangCore 帮助菜单 ═════</bold></gradient>"
+      - "<gradient:#38ef7d:#11998e><bold>===== ClarityLangCore 帮助菜单 =====</bold></gradient>"
       - "<yellow>/lang</yellow> <gray>- 打开原生语言选择对话框。</gray>"
       - "<yellow>/lang <代码></yellow> <gray>- 直接切换语言 (例如: /lang en_US)。</gray>"
       - "<yellow>/lang list</yellow> <gray>- 查看所有可用语言列表。</gray>"
       - "<yellow>/lang reset</yellow> <gray>- 重置为客户端自动检测语言。</gray>"
       - "<yellow>/lang reload</yellow> <gray>- 重载配置文件与语言文件 (管理员)。</gray>"
-      - "<gradient:#38ef7d:#11998e><bold>═════════════════════════════════════</bold></gradient>"
+      - "<gradient:#38ef7d:#11998e><bold>====================================</bold></gradient>"
     success: "<prefix><green>您的语言已成功更改为 <yellow><lang_name></yellow> (<lang_code>)！</green>"
     reset: "<prefix><green>语言偏好已重置为客户端自动检测：<yellow><lang_name></yellow> (<lang_code>)！</green>"
     invalid_language: "<prefix><red>未找到语言 '<lang>'！请使用 <yellow>/lang list</yellow> 查看可用语言。</red>"
-    list_header: "<gradient:#38ef7d:#11998e><bold>═══ 可用语言列表 ═══</bold></gradient>"
-    list_entry: "<gray>- <flag> <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
+    list_header: "<gradient:#38ef7d:#11998e><bold>=== 可用语言列表 ===</bold></gradient>"
+    list_entry: "<gray>- <yellow><lang_name></yellow> (<lang_code>) <white><active></white></gray>"
     list_active_tag: "<green>[当前使用]</green>"
     no_permission: "<prefix><red>您没有权限执行此命令！</red>"
     only_players: "<prefix><red>此命令只能由玩家执行！</red>"
@@ -35,15 +35,15 @@ core:
   dialog:
     title: "<gradient:#38ef7d:#11998e><bold>选择语言 / SELECT LANGUAGE</bold></gradient>"
     body_header: "<white>欢迎来到服务器！请选择您偏好的语言。</white>"
-    body_current: "<gray>当前使用语言: <yellow><current_flag> <current_name></yellow></gray>"
-    body_client_detected: "<gray>Minecraft 客户端检测到的语言: <aqua><client_flag> <client_name></aqua></gray>"
+    body_current: "<gray>当前语言: <yellow><current_flag><current_name></yellow></gray>"
+    body_client_detected: "<gray>客户端语言: <aqua><client_flag><client_name></aqua></gray>"
     body_instruction: "<gray>请点击下方按钮选择您偏好的语言：</gray>"
     radio_label: "<white>请选择语言：</white>"
     button_tooltip: "<gray>点击选择 <yellow><lang_name></yellow></gray>"
-    button_active_badge: "<green>✓ </green>"
-    button_confirm: "<green>✔ 确认</green>"
+    button_active_badge: "<green>● </green>"
+    button_confirm: "<green>确认</green>"
     button_confirm_tooltip: "<gray>点击保存所选语言</gray>"
-    button_cancel: "<red>✖ 取消 / 关闭</red>"
+    button_cancel: "<red>取消 / 关闭</red>"
     button_cancel_tooltip: "<gray>点击关闭此对话框</gray>"
     notice_title: "<green>语言已更新</green>"
     notice_message: "<white>语言已成功切换为 <yellow><lang_name></yellow>！</white>"
